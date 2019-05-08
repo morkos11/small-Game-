@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace My_First_Game
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "mine challange";
+            Random mult = new Random();
+            int x, y, z, f;
+            x = mult.Next(1, 51);
+            y = mult.Next(1, 51);
+            z = x * y;
+        Start: Console.WriteLine("what is the result of multiblication {0} to {1}", x, y);
+            f = int.Parse(Console.ReadLine());
+
+            if (z == (f - 4) || z == (f + 4) || z == (f - 3) || z == (f - 2) || z == (f - 1) || z == (f + 1) || z == (f + 2) || z == (f + 3) || z == (f + 4))
+            {
+                Random NearlyGotIt = new Random();
+                int ans = NearlyGotIt.Next(1, 4);
+                switch (ans)
+                {
+                    case 1:
+                        Console.WriteLine("u nearly get it ");
+                        break;
+                    case 2:
+                        Console.WriteLine("not true but close");
+                        break;
+                    default:
+                        Console.WriteLine("close enought");
+                        break;
+                }
+                goto Start;
+            }
+            else if (z < f || z > f)
+            {
+                Random WrongAnswer = new Random();
+                int new4 = WrongAnswer.Next(1, 3);
+                switch (new4)
+                {
+                    case 1:
+                        Console.WriteLine("try again");
+                        break;
+                    default:
+                        Console.WriteLine("Hard luck ");
+                        break;
+                }
+                goto Start;
+            }
+            else
+            {
+                Random TrueAnw = new Random();
+                int answ3 = TrueAnw.Next(1, 3);
+                switch (answ3)
+                {
+                    case 1:
+                        Console.WriteLine("that is true ");
+                        break;
+                    default:
+                        Console.WriteLine("Excellent work ");
+                        break;
+                }
+            }
+            Console.ReadKey();
+        }
+
+
+
+
+
+    }
+
+}
+    
+
